@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@400;500;600;700&display=swap');
+:root{
+    /* primary Color */
+    --Orange: hsl(25, 97%, 53%);
+    /* secondary color */
+    --White: hsl(0, 0%, 100%);
+    --Light-Grey: hsl(217, 12%, 63%);
+    --Medium-Grey: hsl(216, 12%, 54%);
+    --Dark-Blue: hsl(213, 19%, 18%);
+    --Very-Dark-Blue: hsl(216, 12%, 8%);
+    --font-main:'Overpass', sans-serif;
+}
+
+html{
+    font-size: 100%;
+}
+*,*::after,*::before{
+    box-sizing: border-box;
+    margin: 0;
+}
+a,a:visited{
+    text-decoration: none;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-main);
+    color: var(--White);
+    background-color: var(--Very-Dark-Blue);
+    height: 100vh;
+    line-height: 1.5;
+}
+.card{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    padding:25px;
+    background-image: radial-gradient(ellipse at top ,var(--Dark-Blue), var(--Very-Dark-Blue));
+    max-width: 100%;
+    width: 390px;
+    border-radius: 1.5rem;
+}
+@media(max-width:400px){
+    .card{
+        width: 340px;
+    }
+    .content p {
+        padding-right: 16px;
+    }
+}
+.tk{
+    display: inherit;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.svg-star{
+    width: 40px;
+    height: 40px;
+    background: var(--Dark-Blue);
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 25px;
+}
+.svg-star img{
+    height: 12px;
+}
+.svg{
+    margin: 10px 0 ;
+}
+.block-el{
+    background: var(--Dark-Blue);
+    border-radius: 1rem;
+    padding: 4px 15px;
+    font-size: .8em;
+    color: var(--Orange);
+    margin: 15px 0;
+}
+.content-tk h1{
+    font-size: 25px;
+    margin: 12px 0;
+}
+.content-tk p{
+    font-size: 0.9375em;
+    color: var(--Medium-Grey);
+    font-weight: 400;
+}
+.content h1{
+    font-size: 1.8em;
+}
+.content p {
+    font-size: .8em;
+    color: var(--Medium-Grey);
+    margin:10px 0 ;
+    font-weight: 600;
+    padding-right: 10px;
+}
+.rating li{
+    list-style-type: none;
+}
+.rating{
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0 20px 0;
+    width: 100%;
+}
+.rate{
+    width: 50px;
+    height: 50px;
+    background: var(--Dark-Blue);
+    display: inherit;
+    align-items: center;
+    border-radius: 50%;
+    font-size: 1em;
+    justify-content: center;
+    color: var(--Light-Grey);
+    border: 0;
+    cursor: pointer;
+}
+.rate:active,.rate:focus{
+    background-color: var(--Medium-Grey);
+    color: var(--White);
+}
+.rate:hover{
+    background-color: var(--Orange);
+    color: var(--White);
+    
+}
+.btn{
+    width: 100%;
+    background: var(--Orange);
+    color: var(--White);
+    letter-spacing: 2px;
+    font-size: 0.8em;
+    font-weight: 600;
+    border-radius: 1.5rem;
+    padding: 13px 0;
+    margin: 10px 0;
+    border: 0;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+.btn:hover{
+    background: var(--White);
+    color: var(--Orange);
+}
+.card.active{
+    display: none;
+}
+.no-show{
+    display: none;
+}
+.show{
+    display: flex;
+}
+
+
+/* svg animation */
+.atm{
+    animation-duration: 1s;
+    animation-name: svgcard;
+    transition: transform 0.3s ease-in;
+}
+
+@keyframes svgcard{
+    0%{
+        transform: scale(1.2) rotate3d(0, 1, 0.5, 3.1661rad);
+    }
+    100%{
+        transform: scale(1) rotate3d(0, 1, 0.5, 0.0025rad);
+    }
+}
